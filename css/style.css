@@ -26,10 +26,6 @@ a {
     color: black;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
 .btn {
     width: 160px;
     padding: 10px;
@@ -69,6 +65,11 @@ header a {
     line-height: 28.6px;
     text-decoration: none;
     color: black;
+}
+
+header a:hover , .footer__contacts a:hover , .footer__li a:hover  {
+    text-decoration: underline;
+
 }
 
 .header__right {
