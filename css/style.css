@@ -14,10 +14,11 @@
 }
 
 /* REPEATED */
-body, a, p, h1, h2, h3, ul {
+body, a, p, h1, h2, h3, ul , li{
     margin: 0;
     padding: 0;
     text-decoration: none;
+    list-style: none;
 }
 
 a {
@@ -52,7 +53,6 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 30px !important;
 }
 
 header ul {
@@ -102,8 +102,6 @@ header a {
 }
 
 .intro__right {
-    background: url("../img/man.png") no-repeat;
-    background-size: contain;
     width: 500px;
     height: 500px;
 }
@@ -113,7 +111,7 @@ header a {
     color: white;
 }
 
-.what_Ido__list , .examples__list {
+.services__list , .examples__list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -126,65 +124,134 @@ header a {
 .list {
     display: flex;
     flex-direction: column;
-}
-
-.list .list__pic {
-    margin-bottom: 30px;
-    width: 150px;
-    height: 150px;
-}
-
-.pic_1 {
-    background: url("../img/1.png") no-repeat;
-    background-size: contain;
-}
-
-.pic_2 {
-    background: url("../img/2.png") no-repeat;
-    background-size: contain;
-}
-
-.pic_3 {
-    background: url("../img/3.png") no-repeat;
-    background-size: contain;
-}
-
-.pic_4 {
-    background: url("../img/4.png") no-repeat;
-    background-size: contain;
+    width: 210px;
+    position: relative;
+    overflow: hidden; /* Ensure the image doesn't overflow */
 }
 
 .list__descr {
-    width: 210px;
+    position: relative;
+    padding-top: 230px; /* Space for the image */
+    text-align: center; /* Center the text */
+}
+  
+.pic_1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 210px; /* Adjust size to fit your image */
+    height: 210px;
+    background-image: url('../img/1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.examples__pic {
-    width: 350px !important;
+.pic_2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 210px; /* Adjust size to fit your image */
+    height: 210px;
+    background-image: url('../img/2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.pic_3:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 210px; /* Adjust size to fit your image */
+    height: 210px;
+    background-image: url('../img/3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.pic_4:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 210px; /* Adjust size to fit your image */
+    height: 210px;
+    background-image: url('../img/4.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.example__list {
+    width: 350px;
+}
+
+.example__descr {
+    padding-top: 250px;
+}
+
+.example_pic1:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350px !important; /* Adjust size to fit your image */
     height: 250px !important;
+    background-image: url('../img/e1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-.examples__descr {
-    width: 100%;
+.example_pic2:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350px !important; /* Adjust size to fit your image */
+    height: 250px !important;
+    background-image: url('../img/e2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-.info_box {
+.example_pic3:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350px !important; /* Adjust size to fit your image */
+    height: 250px !important;
+    background-image: url('../img/e3.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.prices {
     background-color: #3F2AFF;
     color: white;
 }
 
-.info_box__container {
+.prices__container {
     padding-block: 50px;
 }
 
-.info_box__title  , .info_box__descr {
+.prices__title  , .prices__descr {
     width: 50%;
 }
 
-.info_box__title {
+.prices__title {
     margin-bottom: 50px;
 }
 
-.info_box__descr {
+.prices__descr {
     font-size: 14px;
 }
 
@@ -202,48 +269,41 @@ footer {
     gap: 10px;
 }
 
+.footer__socials {
+    align-items: center;
+}
+
 .socials__icons {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .socials__icon {
     width: 100%;
-    height: 10px;
+    height: 13px;
 }
 
 .icon_1, .icon_4, .icon_5 {
-    width: 12px;
+    height: 15px;
 }
 
 .popup-container {
-    display: none; /* Hidden by default, will be shown when a button is clicked */
-    position: fixed; /* Position fixed to cover the whole screen */
+    display: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    justify-content: center; /* Center form horizontally */
-    align-items: center; /* Center form vertically */
-    z-index: 1000; /* Ensure it is on top of other content */
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
 
 
-    /* display: none;
-    z-index: 100; */
     transition: opacity 0.3s ease-in-out;
-    /* position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
-*/
     flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
-
-    /* padding: 50px; */
     gap: 20px;
     border: 1px solid #000;
     background-color: #3F2AFF;
